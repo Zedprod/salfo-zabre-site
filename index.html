@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salfo ZABRE – Communication digitale, contenus et création</title>
+<style>
+:root{--bg:#f7f8fa;--bg2:#eef2f6;--fg:#101828;--mut:#667085;--card:#fff;--line:#dfe4ea;--acc:#102a43;--acc2:#1f5d8f;--accfg:#fff;--gold:#c58a2b;--wa:#128c4a;--wafg:#fff;--soft:#e9f1f8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1722;--bg2:#142333;--fg:#f4f7fa;--mut:#b7c2ce;--card:#16283a;--line:#2c4053;--acc:#a9d3f0;--acc2:#79b4df;--accfg:#102033;--gold:#e0b35d;--wa:#2fc276;--wafg:#08210f;--soft:#1b354c}}
+:root[data-theme="dark"]{--bg:#0d1722;--bg2:#142333;--fg:#f4f7fa;--mut:#b7c2ce;--card:#16283a;--line:#2c4053;--acc:#a9d3f0;--acc2:#79b4df;--accfg:#102033;--gold:#e0b35d;--wa:#2fc276;--wafg:#08210f;--soft:#1b354c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0;font-weight:700}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+section{padding:56px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:1.7rem;margin-bottom:10px}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 28px}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+p{margin:.6em 0}
+a{color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 24px;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid transparent;text-align:center;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.btn.wa{background:var(--wa);color:var(--wafg)}
+.btn.ghost{border-color:var(--acc);color:var(--acc);background:transparent}
+.hero{padding:48px 0 60px}
+.hero h1{font-size:2.15rem;max-width:20ch}
+.hero .sub{font-size:1.08rem;color:var(--mut);max-width:58ch;margin-top:18px}
+.who{margin-top:22px;font-size:.95rem;color:var(--mut);border-left:3px solid var(--gold);padding-left:12px}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p{margin:0;color:var(--mut);font-size:.96rem}
+.steps{counter-reset:s}
+.step{position:relative;padding-left:58px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:20px;width:28px;height:28px;border-radius:50%;background:var(--acc);color:var(--accfg);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.plan{display:flex;flex-direction:column}
+.plan .name{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.plan .price{font:700 2rem Georgia,serif;margin:6px 0 2px}
+.plan .price small{font:500 .9rem system-ui,sans-serif;color:var(--mut)}
+.plan ul{list-style:none;margin:14px 0 0;padding:0;font-size:.96rem}
+.plan li{padding:6px 0 6px 24px;position:relative;border-top:1px solid var(--line)}
+.plan li:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.plan.feat{border:2px solid var(--acc);box-shadow:0 10px 28px rgba(20,48,79,.13)}
+.note{text-align:center;color:var(--mut);margin-top:22px;font-size:.95rem}
+.two{display:grid;gap:16px}
+.two ul{margin:10px 0 0;padding-left:20px;color:var(--mut);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--mut)}
+.quote{font:italic 1.12rem/1.6 Georgia,serif}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+.arts{list-style:none;padding:0;margin:14px 0 0}
+.arts li{padding:8px 0;border-top:1px solid var(--line);font-size:.95rem}
+.cta{background:var(--acc);color:var(--accfg);text-align:center;border-radius:22px;padding:44px 22px}
+.cta h2{margin-bottom:10px}
+.cta p{opacity:.9;max-width:46ch;margin:0 auto}
+.cta .btn.wa{margin-top:24px;min-width:240px}
+.cta a.mail{display:block;margin-top:16px;color:inherit;font-size:.95rem}
+footer{padding:28px 0 40px;text-align:center;color:var(--mut);font-size:.88rem}
+.fade{animation:up .7s ease both}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+@media (min-width:720px){
+ .wrap{padding:0 32px}section{padding:76px 0}.hero{padding:88px 0 92px}
+ .hero h1{font-size:3.1rem}h2{font-size:2.1rem}
+ .g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr 1fr}
+ .cta{padding:64px 40px}
+}
+@media (min-width:980px){.g4{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:719px){.btn{width:100%}}
+
+/* --- Identité visuelle commerciale --- */
+body{font-size:16px;background:var(--bg)}
+body:before{content:"";display:block;height:5px;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--gold))}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(31,93,143,.13),transparent 30%),linear-gradient(135deg,#f9fafb 0%,#eef3f7 100%);padding:32px 0 76px}
+.hero:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-150px;bottom:-190px;background:rgba(197,138,43,.10)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:2.55rem;letter-spacing:-.035em;max-width:18ch}
+.hero .sub{font-size:1.12rem;max-width:64ch;color:#475467}
+.hero .eyebrow{display:inline-flex;padding:7px 12px;border:1px solid rgba(16,42,67,.15);border-radius:999px;background:rgba(255,255,255,.72);box-shadow:0 5px 18px rgba(16,42,67,.06)}
+.who{background:rgba(255,255,255,.65);padding:13px 16px;border-radius:12px;max-width:680px;box-shadow:0 6px 20px rgba(16,42,67,.05)}
+.btn{border-radius:10px;min-height:52px;box-shadow:0 5px 14px rgba(16,42,67,.08)}
+.btn.wa{box-shadow:0 8px 20px rgba(18,140,74,.22)}
+.btn.ghost{background:#fff}
+section{padding:64px 0}
+section.alt{background:var(--bg2)}
+h2{font-size:1.9rem;letter-spacing:-.025em}
+h2:after{content:"";display:block;width:42px;height:3px;background:var(--gold);margin-top:12px;border-radius:3px}
+.lead{font-size:1.02rem}
+.grid{gap:20px}
+.card{border-radius:18px;padding:24px;background:rgba(255,255,255,.94);box-shadow:0 8px 25px rgba(16,42,67,.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(16,42,67,.10);border-color:#cbd5df}
+.card h3{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.08rem;letter-spacing:-.01em}
+#services .card{position:relative;padding-top:30px}
+#services .card:before{content:"";display:block;width:34px;height:4px;background:var(--acc2);border-radius:4px;margin-bottom:18px}
+#services .card:nth-child(5):before,#services .card:nth-child(6):before{background:var(--gold)}
+.plan{overflow:hidden}
+.plan .name{color:var(--acc2)}
+.plan .price{color:var(--acc)}
+.plan.feat{border:2px solid var(--acc2);box-shadow:0 14px 34px rgba(31,93,143,.14);position:relative}
+.plan.feat:before{content:"Recommandé";position:absolute;right:16px;top:16px;background:var(--acc);color:#fff;border-radius:999px;padding:5px 9px;font:700 .68rem system-ui,sans-serif;letter-spacing:.04em}
+.plan ul{margin-top:20px}
+.tags span{background:#fff;box-shadow:0 3px 10px rgba(16,42,67,.04);color:#475467}
+.badge{background:#fff9eb}
+.cta{background:linear-gradient(135deg,#102a43,#1f5d8f);box-shadow:0 18px 45px rgba(16,42,67,.18);position:relative;overflow:hidden}
+.cta:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-150px;border:1px solid rgba(255,255,255,.18)}
+.cta>*{position:relative;z-index:1}
+footer{border-top:1px solid var(--line)}
+@media (min-width:720px){
+ .hero{padding:62px 0 92px}
+ .hero h1{font-size:4rem}
+ h2{font-size:2.25rem}
+ #services .g2{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:719px){
+ .hero h1{font-size:2.35rem}
+ .hero{padding-top:30px}
+}
+@media (max-width:719px){.wrap[style*="margin-top:-28px"] .card{grid-template-columns:1fr!important;text-align:left!important}.wrap[style*="margin-top:-28px"] .card>div{padding:8px 0;border-bottom:1px solid var(--line)}.wrap[style*="margin-top:-28px"] .card>div:last-child{border-bottom:0}}</style>
+</head>
+<body>
+<header class="hero"><div class="wrap fade">
+<div class="eyebrow">Communication digitale · Contenus · Graphisme · Interviews</div>
+<h1>Votre activité mérite d'être visible, comprise et bien présentée.</h1>
+<p class="sub">Je vous accompagne dans la création de contenus, la communication digitale, la création graphique et vos interviews, avec une approche journalistique claire et professionnelle.</p>
+<p class="who"><b>Salfo ZABRE</b>, journaliste à La Plume depuis 2024. Prestations indépendantes, réalisées directement avec moi.</p>
+<div class="btns">
+<a class="btn wa" href="https://wa.me/22672030154?text=Bonjour%20Salfo%2C%20je%20souhaite%20r%C3%A9server%20un%20appel%20gratuit%20sur%20la%20r%C3%A9daction%20LinkedIn%2FFacebook.">Réserver un appel gratuit sur WhatsApp</a>
+<a class="btn ghost" href="#services">Voir mes services</a>
+</div></div></header>
+<div class="wrap" style="margin-top:-28px;position:relative;z-index:5">
+  <div class="card" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 20px;text-align:center">
+    <div><b style="display:block;font-size:1.05rem">Journaliste</b><span style="color:var(--mut);font-size:.85rem">La Plume · depuis 2024</span></div>
+    <div><b style="display:block;font-size:1.05rem">Communication</b><span style="color:var(--mut);font-size:.85rem">Contenus · réseaux · visuels</span></div>
+    <div><b style="display:block;font-size:1.05rem">Réputation</b><span style="color:var(--mut);font-size:.85rem">Attestation Atingi</span></div>
+  </div>
+</div>
+
+
+<section class="alt"><div class="wrap">
+<h2>À propos</h2>
+<p class="lead">Je suis <b>Salfo ZABRE</b>, journaliste à <a href="https://www.la-plume.bf">La Plume</a> depuis 2024. J'interviewe, je cherche l'angle et j'écris pour le grand public au quotidien, sur des sujets très variés.</p>
+<p class="lead" style="margin-top:-14px">Ce métier m'a appris à faire parler les gens, à repérer ce qui compte vraiment dans un parcours et à l'écrire clairement. Mes prestations sont une activité indépendante, distincte de mon travail de journaliste.</p>
+<div class="card"><b>Quelques-uns de mes articles</b>
+<ul class="arts">
+<li><a href="https://la-plume.bf/2026/09/15/ouagadougou-saidou-maiga-retrace-son-experience-a-la-tete-de-falagountou-dans-un-ouvrage/">Saïdou Maïga retrace son expérience à la tête de Falagountou dans un ouvrage</a></li>
+<li><a href="https://la-plume.bf/2026/09/14/burkina-faso-nous-voulons-que-les-maisons-de-jeunes-redeviennent-de-veritables-carrefours-dopportunites/">Maisons de jeunes : « redevenir de véritables carrefours d'opportunités »</a></li>
+</ul></div>
+</div></section><section><div class="wrap">
+<h2>Formation &amp; crédibilité</h2>
+<p class="lead">Mon activité s'appuie sur mon expérience journalistique et sur des compétences complémentaires en communication numérique.</p>
+<div class="grid g3">
+<div class="card"><span class="badge">Expérience</span><h3>Journalisme</h3><p>Journaliste à La Plume depuis 2024, avec une pratique quotidienne de l'interview, de la recherche d'angle et de la rédaction.</p></div>
+<div class="card"><span class="badge">Attestation</span><h3>Réputation numérique</h3><p>Attestation Atingi : « Comment gérer votre réputation numérique ».</p></div>
+<div class="card"><span class="badge">Création</span><h3>Communication visuelle</h3><p>Création de visuels, affiches, logos et contenus destinés aux réseaux sociaux et à la communication des activités.</p></div>
+</div></div></section>
+
+<section id="services"><div class="wrap">
+<h2>Mes services</h2>
+<p class="lead">Un accompagnement pratique pour vous aider à mieux prendre la parole, présenter votre activité et développer votre présence en ligne.</p><div class="tags"><span>Pour une mission ponctuelle</span><span>Pour un accompagnement mensuel</span><span>Sur devis selon le besoin</span></div>
+<div class="grid g2">
+<div class="card"><h3>Rédaction &amp; contenus</h3><p>Posts LinkedIn et Facebook, articles web, tribunes, newsletters, textes institutionnels et contenus adaptés à votre public.</p></div>
+<div class="card"><h3>Communication digitale</h3><p>Gestion de pages Facebook, calendrier éditorial, publication et programmation de contenus, accompagnement de votre présence numérique.</p></div>
+<div class="card"><h3>Interviews écrites &amp; vidéo</h3><p>Préparation, conduite et mise en forme d'interviews. Texte relu et prêt à publier ou vidéo montée et sous-titrée.</p></div>
+<div class="card"><h3>Création graphique</h3><p>Affiches, visuels pour les réseaux sociaux, supports de communication et créations graphiques adaptées à votre activité.</p></div>
+<div class="card"><h3>Identité visuelle</h3><p>Création de logos et éléments graphiques pour donner à votre activité une identité claire, cohérente et professionnelle.</p></div>
+<div class="card"><h3>Réputation numérique</h3><p>Accompagnement et bonnes pratiques pour mieux gérer votre image en ligne. Formation attestée par Atingi : « Comment gérer votre réputation numérique ».</p></div>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<h2>Comment ça marche</h2>
+<p class="lead">Trois étapes simples.</p>
+<div class="grid g3 steps">
+<div class="card step"><h3>Un appel</h3><p>Pour recueillir vos idées, anecdotes et prises de position.</p></div>
+<div class="card step"><h3>J'écris</h3><p>Je rédige vos contenus dans votre ton et votre vocabulaire.</p></div>
+<div class="card step"><h3>Vous publiez</h3><p>Vous validez puis publiez, ou je programme les publications selon la formule.</p></div>
+</div></div></section>
+
+<section id="formules"><div class="wrap">
+<h2>Formules &amp; prestations</h2>
+<p class="lead">Des formules mensuelles pour les besoins réguliers. Pour une affiche, un logo, une interview ou une prestation ponctuelle, le tarif est établi selon le projet.</p>
+<div class="grid g2 g4">
+<div class="card plan"><div class="name">Essentiel</div><div class="price">150 000 <small>FCFA / mois</small></div>
+<ul><li>2 posts par semaine</li><li>8 par mois</li><li>1 appel mensuel</li><li>1 série de corrections incluse</li></ul></div>
+<div class="card plan feat"><div class="name">Visibilité</div><div class="price">250 000 <small>FCFA / mois</small></div>
+<ul><li>3 posts par semaine</li><li>12 par mois</li><li>1 appel mensuel</li><li>Programmation des publications</li></ul></div>
+<div class="card plan"><div class="name">Facebook PME</div><div class="price">75 000 <small>FCFA / mois</small></div>
+<ul><li>Gestion de la page Facebook</li><li>3 à 4 publications par semaine</li><li>Textes et légendes</li><li>Idéal pour commerces et PME</li></ul></div>
+<div class="card plan feat"><div class="name">Complet</div><div class="price">500 000 <small>FCFA / mois</small></div>
+<ul><li>12 posts</li><li>1 tribune ou newsletter</li><li>2 appels par mois</li><li>Bilan mensuel de l'audience</li></ul></div>
+</div>
+<p class="note">Affiches, logos, interviews, vidéos et autres prestations ponctuelles : tarif sur devis selon le projet.</p><p class="note">Premier mois d'essai à tarif réduit pour les 3 premiers clients.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>Interviews prêtes à publier</h2>
+<p class="lead">J'interviewe le dirigeant, l'expert ou l'entrepreneur, puis je vous livre le contenu fini.</p>
+<div class="two">
+<div class="card"><h3>Interview en texte</h3><ul><li>Article ou série de posts</li><li>Relu et corrigé</li><li>Prêt à publier</li></ul></div>
+<div class="card"><h3>Interview en vidéo</h3><ul><li>Montée</li><li>Sous-titrée</li><li>Prête pour Facebook, LinkedIn ou TikTok</li></ul></div>
+</div>
+<div class="tags"><span>Lancement</span><span>Anniversaire d'entreprise</span><span>Distinction</span><span>Mise en valeur d'un dirigeant ou d'un expert</span></div>
+<p class="note" style="text-align:left">Tarif sur devis selon le format.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Ce que je peux créer pour vous</h2>
+<div class="grid g3">
+<div class="card"><span class="badge">Contenu</span><h3>Posts &amp; articles</h3><p>Des textes clairs, crédibles et adaptés à votre public, avec une attention particulière portée à l'angle et au message.</p></div>
+<div class="card"><span class="badge">Visuel</span><h3>Affiches &amp; logos</h3><p>Des créations graphiques pour annoncer, présenter ou donner une identité visuelle à votre activité.</p></div>
+<div class="card"><span class="badge">Vidéo</span><h3>Interviews &amp; contenus courts</h3><p>Des vidéos montées et sous-titrées pour Facebook, LinkedIn, TikTok ou vos supports de communication.</p></div>
+</div>
+<h2 style="margin-top:44px">Pour qui ?</h2>
+<div class="tags"><span>Dirigeants de PME</span><span>Commerçants</span><span>Entrepreneurs</span><span>Associations</span><span>Experts</span><span>Consultants</span><span>Organisations</span><span>Professionnels</span></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cta">
+<h2>Parlons de votre projet</h2>
+<p>Un premier échange pour comprendre votre besoin et vous proposer une prestation adaptée : rédaction, communication digitale, graphisme, interview ou réputation numérique.</p>
+<a class="btn wa" href="https://wa.me/22672030154?text=Bonjour%20Salfo%2C%20je%20souhaite%20parler%20de%20mon%20projet.">Réserver sur WhatsApp</a>
+<a class="mail" href="mailto:salfozabre850@gmail.com?subject=R%C3%A9daction%20LinkedIn%20%2F%20Facebook">WhatsApp : +226 72 03 01 54 · salfozabre850@gmail.com</a>
+</div></div></section>
+<footer><div class="wrap">© Salfo ZABRE · Communication digitale, contenus &amp; création · Activité indépendante</div></footer>
+</body>
+</html>
