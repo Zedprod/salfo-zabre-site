@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zedprod.github.io/salfo-zabre-site/sitemap.xml
